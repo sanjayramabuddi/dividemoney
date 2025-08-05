@@ -7,24 +7,24 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "div-money",
+  title: "dmon",
   description: "the smarter way to split money with friends",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <head>
-          <link rel="icon" href="/logos/" sizes="any" />
-        </head>
-        <body className={`${inter.className}`}>
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/logos/logo1.png" sizes="any" />
+      </head>
+      <body className={`${inter.className}`}>
+        <ClerkProvider>
           <ConvexClientProvider>
             <Header />
-            <main className="min-h-screen">{children}</main>
+            <main className="min-h-screen bg-cyan-900">{children}</main>
           </ConvexClientProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
